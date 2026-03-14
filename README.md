@@ -2,7 +2,7 @@
 
 Lost and found web app with secure, confidence-based item matching.
 
-**Live demo:** [add link after deployment]
+**Live demo:** foundly.up.railway.app
 
 ---
 
