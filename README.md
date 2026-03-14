@@ -27,7 +27,7 @@ Foundly lets users submit lost item reports through a public form. A private adm
 
 ## Tech stack
 
-- **Frontend:** HTML, CSS, JavaScript (vanilla)
+- **Frontend:** HTML, CSS, JavaScript 
 - **Backend:** Node.js, Express
 - **Matching:** Jaccard similarity algorithm (keyword overlap scoring)
 - **Storage:** JSON flat files (no database required)
