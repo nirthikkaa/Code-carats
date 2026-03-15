@@ -44,8 +44,8 @@ src/
 ├── backend/
 │   ├── server.js       # Express API server
 │   ├── matcher.js      # Jaccard scoring algorithm
-│   ├── db.js           # JSON file read/write
-│   └── package.json
+│   ├── db.js           
+│   └── package.json    # JSON file read/write
 └── frontend/
     ├── index.html              # Homepage
     ├── lost-report.html        # User submission form
