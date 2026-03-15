@@ -97,9 +97,5 @@ A score of 60+ surfaces the match for admin review. A score of 80+ is flagged as
 
 ## Built at
 
-ConUHacks X — Concordia University, Montreal
-Team: Code Carats
-## Built at
-
 ConUHacks X — Concordia University, Montreal  
 Team: Code Carats
