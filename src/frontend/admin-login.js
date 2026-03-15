@@ -1,4 +1,4 @@
-import { API_BASE, setAdminSession } from "./admin-utils.js";
+import { API_BASE, LS, load, setAdminSession } from "./admin-utils.js";
 
 const form = document.getElementById("loginForm");
 const statusBox = document.getElementById("statusBox");
@@ -28,6 +28,21 @@ form.addEventListener("submit", async (e) => {
     return;
   }
 
+  // 1. Check localStorage employees first
+  const employees = load(LS.EMPLOYEES, []);
+  const match = employees.find(
+    (emp) =>
+      String(emp.employeeId).toLowerCase() === employeeId.toLowerCase() &&
+      emp.password === password
+  );
+
+  if (match) {
+    setAdminSession({ token: "employee", email: match.email || employeeId });
+    window.location.href = "./admin-dashboard.html";
+    return;
+  }
+
+  // 2. Fall back to backend (master admin)
   try {
     setStatus("", "Logging in...");
     const r = await fetch(`${API_BASE}/api/admin/login`, {
@@ -41,6 +56,6 @@ form.addEventListener("submit", async (e) => {
     setAdminSession({ token: data.token, email: employeeId });
     window.location.href = "./admin-dashboard.html";
   } catch (err) {
-    setStatus("bad", String(err?.message || err));
+    setStatus("bad", "Invalid employee ID or password.");
   }
 });
